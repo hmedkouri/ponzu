@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-var ponzuRepo = []string{"github.com", "ponzu-cms", "ponzu"}
+var ponzuRepo = []string{"github.com", "hmedkouri", "ponzu"}
 
 func getAnswer() (string, error) {
 	var answer string

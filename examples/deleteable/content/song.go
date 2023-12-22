@@ -6,10 +6,10 @@ import (
 
 	"net/http"
 
-	"github.com/ponzu-cms/ponzu/management/editor"
-	"github.com/ponzu-cms/ponzu/system/admin/user"
-	"github.com/ponzu-cms/ponzu/system/api"
-	"github.com/ponzu-cms/ponzu/system/item"
+	"github.com/hmedkouri/ponzu/management/editor"
+	"github.com/hmedkouri/ponzu/system/admin/user"
+	"github.com/hmedkouri/ponzu/system/api"
+	"github.com/hmedkouri/ponzu/system/item"
 )
 
 type Song struct {

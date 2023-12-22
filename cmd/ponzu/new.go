@@ -17,7 +17,7 @@ var newCmd = &cobra.Command{
 immediately following the 'new' option in the $GOPATH/src directory. Note:
 'new' depends on the program 'git' and possibly a network connection. If
 there is no local repository to clone from at the local machine's $GOPATH,
-'new' will attempt to clone the 'github.com/ponzu-cms/ponzu' package from
+'new' will attempt to clone the 'github.com/hmedkouri/ponzu' package from
 over the network.`,
 	Example: `$ ponzu new github.com/nilslice/proj
 > New ponzu project created at $GOPATH/src/github.com/nilslice/proj`,
@@ -54,7 +54,7 @@ func name2path(projectName string) (string, error) {
 	}
 
 	// make sure path is inside $GOPATH/src
-	srcrel, err := filepath.Rel(gosrc, path)
+	/*srcrel, err := filepath.Rel(gosrc, path)
 	if err != nil {
 		return "", err
 	}
@@ -73,7 +73,7 @@ func name2path(projectName string) (string, error) {
 		err = os.ErrExist
 	} else if os.IsNotExist(err) {
 		err = nil
-	}
+	}*/
 
 	return path, err
 }
@@ -113,6 +113,8 @@ func newProjectInDir(path string) error {
 		return nil
 	}
 
+	fmt.Printf("Using '%s' as project directory\n", path)
+
 	return createProjectInDir(path)
 }
 
@@ -124,9 +126,9 @@ func createProjectInDir(path string) error {
 	repo := ponzuRepo
 	local := filepath.Join(gopath, "src", filepath.Join(repo...))
 	network := "https://" + strings.Join(repo, "/") + ".git"
-	if !strings.HasPrefix(path, gopath) {
+	/*if !strings.HasPrefix(path, gopath) {
 		path = filepath.Join(gopath, path)
-	}
+	}*/
 
 	// create the directory or overwrite it
 	err = os.MkdirAll(path, os.ModeDir|os.ModePerm)

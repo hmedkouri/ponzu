@@ -70,8 +70,8 @@ import (
 
 	"github.com/bosssauce/reference"
 
-	"github.com/ponzu-cms/ponzu/management/editor"
-	"github.com/ponzu-cms/ponzu/system/item"
+	"github.com/hmedkouri/ponzu/management/editor"
+	"github.com/hmedkouri/ponzu/system/item"
 )
 
 type Catalog struct {
